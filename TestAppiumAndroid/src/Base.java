@@ -12,20 +12,21 @@ public class Base {
 
 	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
 		// TODO Auto-generated method stub
-		
-		File f = new File("src");
-		File fs = new File(f,"ApiDemos-debug.apk");
-		
+
+		//File f = new File("(default package)");
+		File fs = new File("ApiDemos-debug.apk");
+
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		
+
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "AlvaroEmulator");
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 		capabilities.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
-		
-		AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
-		
+
+		AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),
+				capabilities);
+
 		return driver;
-		
+
 	}
 
 }
