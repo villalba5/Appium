@@ -10,7 +10,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class Base {
 
-	public static AndroidDriver<AndroidElement> Capabilities() throws MalformedURLException {
+	public static AndroidDriver<AndroidElement> Capabilities(String device) throws MalformedURLException {
 		// TODO Auto-generated method stub
 
 		//File f = new File("(default package)");
@@ -18,7 +18,8 @@ public class Base {
 
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "AlvaroEmulator");
+		//capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "AlvaroEmulator");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 		capabilities.setCapability(MobileCapabilityType.APP, fs.getAbsolutePath());
 
